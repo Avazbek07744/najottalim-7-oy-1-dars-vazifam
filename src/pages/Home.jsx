@@ -15,8 +15,8 @@ const Home = () => {
         setLoading(true);
         lord.get(`/photos?_start=${skip}&_limit=10`)
             .then((data) => {
-                setPictures((prev) => [...prev, ...data.data]);
-                setTotal(20);
+                setPictures(data.data);
+                setTotal(100);
             })
             .catch((err) => {
                 console.log(err);
